@@ -1,0 +1,13 @@
+import java.util.Scanner;
+
+public class main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        for (int number = 7; number <= 997 ; number+= 10) {
+            System.out.println(number);
+        }
+
+    }
+}
+
