@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+       int n = Integer.parseInt(scan.nextLine());
+
+       int numberFirst = 0;
+       int numberSecond = 0;
+       int numberThird = 0;
+       int numberFourth = 0;
+       int numberFifth = 0;
+
+        for (int i = 1; i <= n; i++) {
+            int number = Integer.parseInt(scan.nextLine());
+
+            if (number < 200){
+                numberFirst ++;
+            }else if (200 <= number && number <= 399){
+                numberSecond ++;
+            }else if (number >= 400 && number <= 599){
+                numberThird ++;
+            }else if (number >= 600 && number <= 799){
+                numberFourth ++;
+            }else {
+                numberFifth ++;
+            }
+        }
+        double p1 = 1.0 * numberFirst / n * 100;
+        double p2 = 1.0 * numberSecond / n * 100;
+        double p3 = 1.0 * numberThird / n * 100;
+        double p4 = 1.0 * numberFourth / n * 100;
+        double p5 = 1.0 * numberFifth / n * 100;
+
+        System.out.printf("%.2f%%%n", p1);
+        System.out.printf("%.2f%%%n", p2);
+        System.out.printf("%.2f%%%n", p3);
+        System.out.printf("%.2f%%%n", p4);
+        System.out.printf("%.2f%%", p5);
+    }
+}
