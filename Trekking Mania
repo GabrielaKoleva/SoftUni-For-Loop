@@ -1,0 +1,49 @@
+import java.util.Scanner;
+
+public class main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        int numberOfGroup = Integer.parseInt(scan.nextLine());
+
+        double p1 = 0;
+        double p2 = 0;
+        double p3 = 0;
+        double p4 = 0;
+        double p5 = 0;
+
+        int counter = 0;
+
+        for (int i = 1; i <= numberOfGroup; i++) {
+            int numberOfPeople = Integer.parseInt(scan.nextLine());
+
+            counter += numberOfPeople;
+
+            if (numberOfPeople <= 5) {
+                p1+= numberOfPeople;
+            }else if (numberOfPeople >= 6 && numberOfPeople <= 12){
+                p2+= numberOfPeople;
+            }else if (numberOfPeople >= 13 && numberOfPeople <= 25){
+                p3+= numberOfPeople;
+            }else if (numberOfPeople >= 26 & numberOfPeople <= 40){
+                p4+= numberOfPeople;
+            }else {
+                p5+= numberOfPeople;
+            }
+        }
+
+        double Musala = p1 / counter * 100;
+        double Monblant = p2 / counter * 100;
+        double Kilimandjaro = p3 / counter * 100;
+        double K2 = p4 / counter * 100;
+        double Everest = p5 / counter * 100;
+
+
+        System.out.printf("%.2f%%%n", Musala);
+        System.out.printf("%.2f%%%n", Monblant);
+        System.out.printf("%.2f%%%n", Kilimandjaro);
+        System.out.printf("%.2f%%%n", K2);
+        System.out.printf("%.2f%%", Everest);
+
+    }
+}
