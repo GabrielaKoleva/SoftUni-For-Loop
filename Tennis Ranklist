@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+public class main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+       int numbersOfTournament = Integer.parseInt(scan.nextLine());
+       int startPoints = Integer.parseInt(scan.nextLine());
+
+       int p1 = 0;
+       int p2 = 0;
+       int p3 = 0;
+
+       int countW = 0;
+
+        for (int i = 1; i <= numbersOfTournament; i++) {
+            String nameOfTournament = scan.nextLine();
+
+            switch (nameOfTournament){
+                case "W":
+                    p1 += 2000;
+                    break;
+                case "F":
+                     p2 += 1200;
+                    break;
+                case "SF":
+                     p3 += 720;
+                    break;
+            }
+            if (nameOfTournament.equals("W")){
+                countW ++;
+            }
+
+        }
+
+        int finalPoints = startPoints + p1 + p2 + p3;
+        int averagePoints = (p1 + p2 + p3) / numbersOfTournament;
+        double percentWin = (1.0 * countW) / numbersOfTournament * 100;
+
+        System.out.printf("Final points: %d%n", finalPoints);
+        System.out.printf("Average points: %d%n", averagePoints);
+        System.out.printf("%.2f%%", percentWin);
+
+    }
+}
