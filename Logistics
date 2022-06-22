@@ -1,0 +1,49 @@
+import java.util.Scanner;
+
+public class main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+     int cargo = Integer.parseInt(scan.nextLine());
+
+     double averagePrice = 0;
+     double percentMinibus = 0;
+     double percentTruck = 0;
+     double percentTrain = 0;
+
+     double price1 = 200;
+     double price2 = 175;
+     double price3 = 120;
+
+     double ton1 = 0;
+     double ton2 = 0;
+     double ton3 = 0;
+
+        for (int i = 1; i <= cargo; i++) {
+            int forEachCargo = Integer.parseInt(scan.nextLine());
+
+
+            if (forEachCargo <= 3){
+                ton1 += forEachCargo;
+            }else if (forEachCargo > 4 && forEachCargo <= 11){
+                ton2 += forEachCargo;
+            }else {
+                ton3 += forEachCargo;
+            }
+
+        }
+        double allTon = ton1 + ton2 + ton3;
+        averagePrice = (ton1 * price1+ ton2 * price2+ ton3 * price3) / allTon;
+
+        percentMinibus = (ton1/allTon) * 100;
+        percentTruck = (ton2/allTon) * 100;
+        percentTrain = (ton3/allTon) * 100;
+
+        System.out.printf("%.2f%n", averagePrice);
+        System.out.printf("%.2f%%%n", percentMinibus);
+        System.out.printf("%.2f%%%n", percentTruck);
+        System.out.printf("%.2f%%",percentTrain );
+
+
+    }
+}
