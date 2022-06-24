@@ -1,0 +1,50 @@
+import java.util.Scanner;
+
+public class main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        int numberOfMovies = Integer.parseInt(scan.nextLine());
+
+        double result = 0;
+        double p1 = 0;
+        double p2 = 0;
+        double p3 = 0;
+        double p4 = 0;
+        double p5 = 0;
+        double p6 = 0;
+
+        for (int i = 1; i <= numberOfMovies; i++) {
+            int forEachMovies = Integer.parseInt(scan.nextLine());
+
+            if (forEachMovies >= 0 && forEachMovies <= 50){
+                if (forEachMovies < 10){
+                    result += forEachMovies * 0.2;
+                    p1 ++;
+                }else if (forEachMovies < 20){
+                    result += forEachMovies * 0.3;
+                    p2 ++;
+                }else if (forEachMovies < 30){
+                    result += forEachMovies * 0.4;
+                    p3 ++;
+                }else if (forEachMovies < 40) {
+                    result += 50;
+                    p4++;
+                }else {
+                    result += 100;
+                    p5 ++;
+                }
+            }else {
+                result /= 2;
+                p6 ++;
+            }
+        }
+        System.out.printf("%.2f%n", result);
+        System.out.printf("From 0 to 9: %.2f%%%n", (p1/numberOfMovies)*100);
+        System.out.printf("From 10 to 19: %.2f%%%n", (p2/numberOfMovies)*100);
+        System.out.printf("From 20 to 29: %.2f%%%n", (p3/numberOfMovies)*100);
+        System.out.printf("From 30 to 39: %.2f%%%n", (p4/numberOfMovies)*100);
+        System.out.printf("From 40 to 50: %.2f%%%n", (p5/numberOfMovies)*100);
+        System.out.printf("Invalid numbers: %.2f%%%n", (p6/numberOfMovies)*100);
+    }
+}
