@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        int capacityOfStadium = Integer.parseInt(scan.nextLine());
+        int numberFens = Integer.parseInt(scan.nextLine());
+
+        double sectorA = 0;
+        double sectorB = 0;
+        double sectorV = 0;
+        double sectorG = 0;
+        double allFens = 0;
+
+        for (int i = 1; i <= numberFens; i++) {
+            String sector = scan.nextLine();
+
+            switch (sector){
+                case "A":
+                    sectorA++;
+                    break;
+                case "B":
+                    sectorB++;
+                    break;
+                case "V":
+                    sectorV++;
+                    break;
+                case "G":
+                    sectorG++;
+                    break;
+            }
+        }
+        allFens = (1.0*numberFens / capacityOfStadium) * 100;
+
+        System.out.printf("%.2f%%%n", (sectorA/numberFens)*100);
+        System.out.printf("%.2f%%%n", (sectorB/numberFens)*100);
+        System.out.printf("%.2f%%%n", (sectorV/numberFens)*100);
+        System.out.printf("%.2f%%%n", (sectorG/numberFens)*100);
+        System.out.printf("%.2f%%", allFens);
+
+    }
+}
